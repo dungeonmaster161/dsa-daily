@@ -34,6 +34,12 @@ public class SinglyLinkedList {
         System.out.println("Length of Linked List is : "+countLength);
     }
 
+    public void insertNodeAtBegining(){
+        ListNode first = new ListNode(99);
+        first.next = head;
+        head = first;
+    }
+
     public static void main(String[] args){
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.head = new ListNode(1);
@@ -45,5 +51,8 @@ public class SinglyLinkedList {
         three.next = four;
         sll.displayList();
         sll.lengthOfSignlyLinkedList();
+        System.out.println("-----After insert at begining------");
+        sll.insertNodeAtBegining();
+        sll.displayList();
     }
 }
