@@ -23,7 +23,7 @@ public class SinglyLinkedList {
         System.out.print("Null");
     }
 
-    public void lengthOfSignlyLinkedList(){
+    public int lengthOfSignlyLinkedList(){
         ListNode temp;
         temp = head;
         int countLength = 0;
@@ -31,7 +31,8 @@ public class SinglyLinkedList {
             countLength++;
             temp = temp.next;
         }
-        System.out.println("Length of Linked List is : "+countLength);
+        return countLength;
+        // System.out.println("Length of Linked List is : "+countLength);
     }
 
     public void insertNodeAtBegining(){
@@ -49,7 +50,30 @@ public class SinglyLinkedList {
         temp.next = new ListNode(6969);
     }
 
+    public void insertAtGivenPosition(int lengthOfLinkedList){
+        ListNode temp;
+        temp = head;
+        int position = 3;
+        int indexing = 1;
+        if(position>lengthOfLinkedList){
+            System.out.println("Position is greater than length of string");
+        }else{
+            while (indexing!=position-1) {
+                temp = temp.next;
+                indexing++;
+            }
+            ListNode relate;
+            ListNode givenPos = new ListNode(116);
+            relate = temp.next;
+            temp.next = givenPos;
+            givenPos.next = relate;
+            
+        }
+        
+    }
+
     public static void main(String[] args){
+        System.out.println("---------------------------Welcome to Linked List operations---------------------------");
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.head = new ListNode(1);
         ListNode two = new ListNode(2);
@@ -59,12 +83,16 @@ public class SinglyLinkedList {
         two.next = three;
         three.next = four;
         sll.displayList();
-        sll.lengthOfSignlyLinkedList();
+        int lengthOfLinkedList = sll.lengthOfSignlyLinkedList();
         System.out.println("-----After insert at begining------");
         sll.insertNodeAtBegining();
         sll.displayList();
         System.out.println("-------After inserting at the end---------");
         sll.insertNodeAtEnd();
         sll.displayList();
+        System.out.println("Insert at a given position");
+        sll.insertAtGivenPosition(lengthOfLinkedList);
+        sll.displayList();
+
     }
 }
