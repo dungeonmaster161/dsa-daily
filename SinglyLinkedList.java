@@ -72,6 +72,14 @@ public class SinglyLinkedList {
         
     }
 
+    public ListNode deleteFirstNode(){
+        ListNode temp;
+        temp = head;
+        head=head.next;
+        temp.next = null;
+        return temp;
+    }
+
     public static void main(String[] args){
         System.out.println("---------------------------Welcome to Linked List operations---------------------------");
         SinglyLinkedList sll = new SinglyLinkedList();
@@ -93,6 +101,8 @@ public class SinglyLinkedList {
         System.out.println("Insert at a given position");
         sll.insertAtGivenPosition(lengthOfLinkedList);
         sll.displayList();
-
+        ListNode returnedValue = sll.deleteFirstNode();
+        System.out.println("\nNode with value "+returnedValue.data+" is deleted");
+        sll.displayList();
     }
 }
