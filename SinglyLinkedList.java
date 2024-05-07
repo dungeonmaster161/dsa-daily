@@ -73,11 +73,32 @@ public class SinglyLinkedList {
     }
 
     public ListNode deleteFirstNode(){
+        if(head == null){
+            return null;
+        }
         ListNode temp;
         temp = head;
         head=head.next;
         temp.next = null;
         return temp;
+    }
+
+    public ListNode deleteLastNode(int length){
+        if(head == null){
+            return null;
+        }
+        ListNode temp;
+        ListNode deletedNode = null;
+        temp = head;
+        System.out.println("Length in fucntion is "+length);
+        if(length>2){
+            while (temp.next.next != null) {
+                temp = temp.next; 
+            }
+            deletedNode = temp.next;
+            temp.next = null;
+        }
+        return deletedNode;
     }
 
     public static void main(String[] args){
@@ -91,7 +112,6 @@ public class SinglyLinkedList {
         two.next = three;
         three.next = four;
         sll.displayList();
-        int lengthOfLinkedList = sll.lengthOfSignlyLinkedList();
         System.out.println("-----After insert at begining------");
         sll.insertNodeAtBegining();
         sll.displayList();
@@ -99,10 +119,15 @@ public class SinglyLinkedList {
         sll.insertNodeAtEnd();
         sll.displayList();
         System.out.println("Insert at a given position");
+        int lengthOfLinkedList = sll.lengthOfSignlyLinkedList();
         sll.insertAtGivenPosition(lengthOfLinkedList);
         sll.displayList();
         ListNode returnedValue = sll.deleteFirstNode();
         System.out.println("\nNode with value "+returnedValue.data+" is deleted");
+        sll.displayList();
+        lengthOfLinkedList = sll.lengthOfSignlyLinkedList();
+        ListNode deletedLastNode =  sll.deleteLastNode(lengthOfLinkedList);
+        System.out.println("Last node removed is"+deletedLastNode.data);
         sll.displayList();
     }
 }
