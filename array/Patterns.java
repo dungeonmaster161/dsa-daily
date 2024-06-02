@@ -6,7 +6,8 @@ public class Patterns {
 		// TODO Auto-generated method stub
 //		pattern5();
 //		pattern6();
-		pattern7();
+//		pattern7();
+		pattern8();
 	}
 	
 	public static void pattern5() {
@@ -92,6 +93,37 @@ public class Patterns {
 
 				}else {
 					System.out.print(" ");
+				}
+			}
+			System.out.println("");
+		}
+	}
+	public static void pattern8() {
+		/*
+		  * ABCDCBA
+			ABC CBA
+			AB   BA
+			A     A
+
+		 */
+		int i,j,n=4;
+		char k;
+		for(i=1;i<=n;i++) {
+			k='A';
+			for(j=1;j<=7;j++) {
+				if(j<=n-i+1 || j>=n+i-1) {
+					System.out.print(k);
+					if(j>=n) {
+						k--;
+					}else {
+						if(j!=n-i+1 || j>=n+i-1)
+						{
+							k++;
+						}	
+					}
+				}else {
+					System.out.print(" ");
+					
 				}
 			}
 			System.out.println("");
