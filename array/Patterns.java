@@ -5,7 +5,8 @@ public class Patterns {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		pattern5();
-		pattern6();
+//		pattern6();
+		pattern7();
 	}
 	
 	public static void pattern5() {
@@ -60,6 +61,35 @@ public class Patterns {
 				if(j<=n-i+1 || j>=n+i+1) {
 					System.out.print("*");
 					
+				}else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println("");
+		}
+	}
+	
+	public static void pattern7() {
+		/*
+   1   
+  121  
+ 12321 
+1234321
+
+		 */
+		int i,j,n=4,k;
+		for(i=1;i<=n;i++) {
+			k=1;
+			for(j=1;j<=7;j++){
+				if(j>=n-i+1 && j<=n+i-1) {
+					System.out.print(k);
+					if(j>n-1)
+					{
+						k--;
+					}else {
+						k++;
+					}
+
 				}else {
 					System.out.print(" ");
 				}
