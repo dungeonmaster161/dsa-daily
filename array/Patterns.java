@@ -1,8 +1,11 @@
+package com.Patterns;
+
 public class Patterns {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		pattern5();
+//		pattern5();
+		pattern6();
 	}
 	
 	public static void pattern5() {
@@ -42,6 +45,27 @@ public class Patterns {
 			System.out.println("");
 		}
 		
+	}
+	
+	public static void pattern6(){
+		/*
+		    **** ****
+			***   ***
+			**     **
+			*       *
+		 * */
+		int i,j,n=4;
+		for(i=1;i<=n;i++) {
+			for(j=1;j<=9;j++) {
+				if(j<=n-i+1 || j>=n+i+1) {
+					System.out.print("*");
+					
+				}else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println("");
+		}
 	}
 
 }
