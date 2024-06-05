@@ -9,7 +9,8 @@ public class Patterns {
 //		pattern7();
 //		pattern8();
 //		pattern9();
-		pattern10();
+//		pattern10();
+		pattern11();
 	}
 	
 	public static void pattern5() {
@@ -178,6 +179,28 @@ public class Patterns {
 				}
 			}
 			System.out.println("");
+		}
+	}
+	
+	public static void pattern11() {
+		/**
+		*******
+		 ***** 
+		  ***  
+		   *   
+
+		 */
+		int i,j,n=7;
+		for(i=1;i<=4;i++) {
+			for(j=1;j<=7;j++) {
+				if(j>=i && j<=n-i+1) {
+					System.out.print("*");
+				}else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println("");
+
 		}
 	}
 
