@@ -10,7 +10,8 @@ public class Patterns {
 //		pattern8();
 //		pattern9();
 //		pattern10();
-		pattern11();
+//		pattern11();
+		pattern12();
 	}
 	
 	public static void pattern5() {
@@ -201,6 +202,38 @@ public class Patterns {
 			}
 			System.out.println("");
 
+		}
+	}
+	
+	public static void pattern12() {
+		/*
+		   1   
+		  232  
+		 34543 
+		4567654
+
+		 */
+		int i,j,k=1,count=1,mem;
+		for(i=1;i<=4;i++) {
+			k=i;
+			mem = i;
+			count=1;
+			for(j=1;j<=7;j++) {
+				if(j>=5-i && j<=5+i-2) {
+					System.out.print(k);
+					
+					if(count >= mem ) {
+						k--;
+					}else {
+						k++;
+					}
+					count++;
+					
+				}else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println("");
 		}
 	}
 
