@@ -11,7 +11,8 @@ public class Patterns {
 //		pattern9();
 //		pattern10();
 //		pattern11();
-		pattern12();
+//		pattern12();
+		pattern13();
 	}
 	
 	public static void pattern5() {
@@ -234,6 +235,32 @@ public class Patterns {
 				}
 			}
 			System.out.println("");
+		}
+	}
+	
+	public static void pattern13(){
+		/**
+		6543210
+		543210 
+		43210  
+		3210   
+		210    
+		10     
+		0      
+
+		 */
+		int i,j,k = 7 ,temp ;
+		for(i=1;i<=7;i++) {
+			temp = k;
+			for(j=1;j<=7;j++) {
+				if(j<=k) {
+					System.out.print(--temp);
+				}else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println("");
+			k--;
 		}
 	}
 
