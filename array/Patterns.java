@@ -267,7 +267,7 @@ public class Patterns {
 	
 	public static void pattern14() {
 		/*
-		 *      1    
+		        1    
 			   12    
 			  123    
 			 1234    
