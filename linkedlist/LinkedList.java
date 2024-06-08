@@ -2,6 +2,7 @@ package linkedlist;
 import java.util.Scanner;
 public class LinkedList {
 	Node head;
+	int size;
 	public class Node{
 		int data;
 		Node next;
@@ -16,16 +17,19 @@ public class LinkedList {
 	
 	public void buildList(int data) {
 		Node newNode = new Node(data);
+		
 		newNode.next = null;
 //		System.out.println("This is list node data "+newNode.data);
 		if(head == null) {
 			head = newNode;
+			this.size = 1;
 		}else {
 			Node temp = head;
 			while(temp.next != null) {
 				temp = temp.next;
 			}
 			temp.next = newNode;
+			this.size = this.size + 1; 
 		}
 	}
 	
@@ -43,13 +47,14 @@ public class LinkedList {
 	}
 	
 	public void getLengthOfLinkedList() {
-		Node temp = head;
-		int count = 0;
-		while(temp!=null) {
-			count++;
-			temp=temp.next;
-		}
-		System.out.println("Length of linked list is : "+count);
+//		Node temp = head;
+//		int count = 0;
+//		while(temp!=null) {
+//			count++;
+//			temp=temp.next;
+//		}
+//		System.out.println("Length of linked list is : "+count);
+		System.out.println("Length of linked list is : "+this.size); // optimized way add instance variable of size int type and update it on crud and print it on call
 	}
 	
 	public static void main(String[] args) {
@@ -71,6 +76,7 @@ public class LinkedList {
 			case 2:
 				singlyLinkedList.getLengthOfLinkedList();
 				break;
+			
 			}
 			if(choice == 999) {
 				break;
