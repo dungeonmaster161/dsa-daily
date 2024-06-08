@@ -1,4 +1,4 @@
-package com.Patterns;
+package patterns;
 
 public class Patterns {
 
@@ -12,7 +12,8 @@ public class Patterns {
 //		pattern10();
 //		pattern11();
 //		pattern12();
-		pattern13();
+//		pattern13();
+		pattern14();
 	}
 	
 	public static void pattern5() {
@@ -261,6 +262,39 @@ public class Patterns {
 			}
 			System.out.println("");
 			k--;
+		}
+	}
+	
+	public static void pattern14() {
+		/*
+		 *      1    
+			   12    
+			  123    
+			 1234    
+			12345    
+			 1234    
+			  123    
+			   12    
+			    1    
+
+		 */
+		int n = 5 , i , j , k=0, num=1;
+		for(i=1;i<=9;i++) {
+			if(i>5) {
+				k--;
+			}else {
+				k++;
+			}
+			num=1;
+			for(j=1;j<=9;j++) {
+				if(j>=(n-k+1) && j<=n) {
+					System.out.print(num);
+					num++;
+				}else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println("");
 		}
 	}
 
