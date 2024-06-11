@@ -2,7 +2,6 @@ package linkedlist;
 import java.util.Scanner;
 public class LinkedList {
 	Node head;
-	int size;
 	public class Node{
 		int data;
 		Node next;
@@ -17,19 +16,16 @@ public class LinkedList {
 	
 	public void buildList(int data) {
 		Node newNode = new Node(data);
-		
 		newNode.next = null;
 //		System.out.println("This is list node data "+newNode.data);
 		if(head == null) {
 			head = newNode;
-			this.size = 1;
 		}else {
 			Node temp = head;
 			while(temp.next != null) {
 				temp = temp.next;
 			}
 			temp.next = newNode;
-			this.size = this.size + 1; 
 		}
 	}
 	
@@ -47,14 +43,20 @@ public class LinkedList {
 	}
 	
 	public void getLengthOfLinkedList() {
-//		Node temp = head;
-//		int count = 0;
-//		while(temp!=null) {
-//			count++;
-//			temp=temp.next;
-//		}
-//		System.out.println("Length of linked list is : "+count);
-		System.out.println("Length of linked list is : "+this.size); // optimized way add instance variable of size int type and update it on crud and print it on call
+		Node temp = head;
+		int count = 0;
+		while(temp!=null) {
+			count++;
+			temp=temp.next;
+		}
+		System.out.println("Length of linked list is : "+count);
+	}
+	
+	public void addElementAtBegining(int data) {
+		Node temp = head;
+		Node newNode = new Node(data);
+		newNode.next = temp;
+		head = newNode;
 	}
 	
 	public static void main(String[] args) {
@@ -62,7 +64,7 @@ public class LinkedList {
 		Scanner sc = new Scanner(System.in);
 		LinkedList  singlyLinkedList = new LinkedList();
 		while(true){
-			System.out.println("-->Operations\n0) To display list\n1) To add new node\n2)Get length of linked list\n999) To exit");
+			System.out.println("-->Operations\n0) To display list\n1) To add new node\n2)Get length of linked list\n3)Add element at begining\n999) To exit");
 			int choice = sc.nextInt();
 			switch(choice){
 			case 0:
@@ -76,7 +78,10 @@ public class LinkedList {
 			case 2:
 				singlyLinkedList.getLengthOfLinkedList();
 				break;
-			
+			case 3:
+				System.out.println("Enter Element");
+				int dataAtBegining = sc.nextInt();
+				singlyLinkedList.addElementAtBegining(dataAtBegining);
 			}
 			if(choice == 999) {
 				break;
