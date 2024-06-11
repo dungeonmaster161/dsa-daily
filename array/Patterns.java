@@ -268,7 +268,7 @@ public class Patterns {
 	
 	public static void pattern14() {
 		/*
-		        1    
+		 *      1    
 			   12    
 			  123    
 			 1234    
@@ -298,44 +298,31 @@ public class Patterns {
 			System.out.println("");
 		}
 	}
-
-	public static void pattern15(){
+	
+	public static void pattern15() {
 		/*
-		    \*****/
-			*\***/*
-			**\*/**
-			***\***
-			**/*\**
-			*/***\*
-			/*****\
-
+		*********
+		**** ****
+		***   ***
+		**     **
+		*       *
+		**     **
+		***   ***
+		**** ****
+		*********
 		 */
-		int i,j,l=1,q=7,k=0,s=8;
-		for(i=1;i<=7;i++){
-			if(i>4) {
-				s++;
+		int i,j,k=0;
+		for(i=1;i<=9;i++) {
+			if(i>5) {
 				k--;
 			}else {
 				k++;
-				s--;
 			}
-			for(j=1;j<=7;j++){
-				if(j == k ) {
-					if(i > 4) {
-						System.out.print("/");
-					}else {
-						System.out.print("\\");
-					}
-				}else if(j == s) {
-					if(i>4)
-					{
-						System.out.print("\\");
-					}else {
-						System.out.print("/");
-					}
-					
-				}else {
+			for(j=1;j<=9;j++) {
+				if(j<=6-k || j>=4+k) {
 					System.out.print("*");
+				}else {
+					System.out.print(" ");
 				}
 			}
 			System.out.println("");
