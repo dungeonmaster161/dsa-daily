@@ -171,7 +171,7 @@ public class Shopkeeper {
 		if(price>5000) {
 			price = price - ((price*10)/100);
 		}
-		System.out.println("Final price of product is "+price);
+		System.out.println("Final price of product is = "+price);
 	}
 
 }
