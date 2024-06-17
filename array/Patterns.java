@@ -14,7 +14,8 @@ public class Patterns {
 //		pattern12();
 //		pattern13();
 //		pattern14();
-		pattern15();
+		// pattern15();
+		pattern16();
 	}
 	
 	public static void pattern5() {
@@ -328,5 +329,36 @@ public class Patterns {
 			System.out.println("");
 		}
 	}
+
+	public static void pattern16() {
+	       
+		//		   A   
+		//		  ABA  
+		//		 ABCBA 
+		//		ABCDCBA
+		
+				int i,j,k=1;
+				char c ;
+				for(i=1;i<=5;i++) {
+					c ='A';
+					k=1;
+					for(j=1;j<=7;j++) {
+						if(j>5-i && j<3+i) {
+							System.out.print(c);
+							if(j<4) {
+								c++;
+							}else {
+								c--;
+							}
+							
+						}else {
+							System.out.print(" ");
+						}
+						k++;
+					}
+					System.out.println("");
+				}
+			}
+		
 
 }
