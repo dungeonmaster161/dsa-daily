@@ -5,7 +5,7 @@ public class StringSkip {
 	public static void main(String[] args) {
 			Scanner sc = new Scanner(System.in);
 			int temp;
-			String s = "abcYZ";
+			String s = "abcYZasdds";
 			String finalString = "";
 			System.out.println("Enter number of steps you want to shift");
 			byte n = sc.nextByte();
